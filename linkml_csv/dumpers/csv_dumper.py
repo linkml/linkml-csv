@@ -21,10 +21,8 @@ class CSVDumper(Dumper):
         """ Return element formatted as CSV lines """
         element_j = json.loads(json_dumper.dumps(element))
         objs = element_j[index_slot]
-        print(f'O={type(objs[0])}')
         configmap = get_configmap(schema, index_slot)
         config = GlobalConfig(key_configs=configmap)
-        print(f'CM={configmap}')
         output = io.StringIO()
         flatten_to_csv(objs, output, config=config, **kwargs)
         return output.getvalue()

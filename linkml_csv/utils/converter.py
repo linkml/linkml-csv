@@ -64,7 +64,6 @@ def cli(input, output=None, input_format=None, output_format=None, index_slot=No
     """
     Converts to/from TSV to rich LinkML instance format (JSON/YAML/RDF)
     """
-    print(f'IN={input}')
     python_module = make_python(schema)
     target_class = python_module.__dict__[target_class]
     schema = YAMLGenerator(schema).schema
@@ -77,7 +76,6 @@ def cli(input, output=None, input_format=None, output_format=None, index_slot=No
         obj = loader.load(source=input, target_class=target_class, schema=schema, index_slot=index_slot)
     else:
         obj = loader.load(source=input,  target_class=target_class)
-    print(f'Obj={obj}')
     if _is_xsv(output_format):
         obj = dumper.dump(obj, output, schema=schema, index_slot=index_slot)
     else:

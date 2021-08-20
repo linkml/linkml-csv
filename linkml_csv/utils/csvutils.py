@@ -14,7 +14,6 @@ def get_configmap(schema: SchemaDefinition, index_slot: SlotDefinitionName) -> C
         slot = schema.slots[index_slot]
         if slot.range is not None and slot.range in schema.classes:
             tgt_cls = schema.classes[slot.range]
-            print(f'TGT ={tgt_cls.name} => {tgt_cls.slots}')
             cm = {}
             for sn in tgt_cls.slots:
                 config = _get_key_config(schema, tgt_cls, sn)
