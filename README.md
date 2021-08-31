@@ -1,3 +1,10 @@
+# DEPRECATED
+
+This has now been merged into the linkml core
+
+ * E.g. https://github.com/linkml/linkml-runtime/blob/main/linkml_runtime/dumpers/csv_dumper.py
+ * linkml-convert CLI in linkml repo
+
 # linkml-csv
 
 Extension to linkml-runtime for converting between instances of LinkML models and CSVs. This may involve selective normalization/denormalization, plus serialization of selected elements as JSON/YAML
